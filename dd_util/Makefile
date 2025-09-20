@@ -1,15 +1,11 @@
 CC = gcc
-CFLAGS = -Wall -Wextra -DUSE_ASM -O2
+USE_ASM ?= 1
+CFLAGS = -Wall -Wextra -DUSE_ASM=$(USE_ASM) -O2
 TARGET = lab
-SRC = lab.c
+SRC = lab1.c
 
-# asm
 $(TARGET): $(SRC)
 	$(CC) $(CFLAGS) -o $@ $<
-
-# c
-c_version: $(SRC)
-	$(CC) $(CFLAGS) -o $(TARGET)_c $<
 
 clean:
 	rm -f $(TARGET) $(TARGET)_c
