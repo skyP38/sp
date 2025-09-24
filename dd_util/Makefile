@@ -2,7 +2,7 @@ CC = gcc
 USE_ASM ?= 1
 CFLAGS = -Wall -Wextra -DUSE_ASM=$(USE_ASM) -O2
 TARGET = lab
-SRC = lab1.c
+SRC = lab.c
 
 $(TARGET): $(SRC)
 	$(CC) $(CFLAGS) -o $@ $<
